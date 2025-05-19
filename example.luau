@@ -25,7 +25,13 @@ ChaCha20.genBlock(ctx)
 ChaCha20.xorBuffer(ctx, myPassword)
 
 print(buffer.tostring(myPassword))
-
 -- (ง ͠° ͟ʖ ͡°)ง
+
+ctx.counter = 1
+ctx.index = 0
+
 ChaCha20.genBlock(ctx)
 ChaCha20.xorBuffer(ctx, myPassword)
+
+myPassword = nil
+-- wtf
